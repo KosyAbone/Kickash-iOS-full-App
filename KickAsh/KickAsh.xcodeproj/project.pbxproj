@@ -14,6 +14,8 @@
 		252116F42A720E770092E6B6 /* KickAsh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 252116F22A720E770092E6B6 /* KickAsh.xcdatamodeld */; };
 		252116F62A720E790092E6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 252116F52A720E790092E6B6 /* Assets.xcassets */; };
 		252116F92A720E790092E6B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252116F72A720E790092E6B6 /* LaunchScreen.storyboard */; };
+		2581C7BB2A82FF1900C1B209 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7BA2A82FF1900C1B209 /* QuestionnaireViewController.swift */; };
+		2581C7BE2A8308D500C1B209 /* Question6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7BD2A8308D500C1B209 /* Question6ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		252116F52A720E790092E6B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		252116F82A720E790092E6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		252116FA2A720E790092E6B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2581C7BA2A82FF1900C1B209 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		2581C7BD2A8308D500C1B209 /* Question6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question6ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		252116E82A720E770092E6B6 /* KickAsh */ = {
 			isa = PBXGroup;
 			children = (
+				2581C7BC2A83089800C1B209 /* QuestionnaireViews */,
 				252116E92A720E770092E6B6 /* AppDelegate.swift */,
 				252116EB2A720E770092E6B6 /* SceneDelegate.swift */,
 				252116ED2A720E770092E6B6 /* ViewController.swift */,
@@ -66,8 +71,17 @@
 				252116F72A720E790092E6B6 /* LaunchScreen.storyboard */,
 				252116FA2A720E790092E6B6 /* Info.plist */,
 				252116F22A720E770092E6B6 /* KickAsh.xcdatamodeld */,
+				2581C7BA2A82FF1900C1B209 /* QuestionnaireViewController.swift */,
 			);
 			path = KickAsh;
+			sourceTree = "<group>";
+		};
+		2581C7BC2A83089800C1B209 /* QuestionnaireViews */ = {
+			isa = PBXGroup;
+			children = (
+				2581C7BD2A8308D500C1B209 /* Question6ViewController.swift */,
+			);
+			path = QuestionnaireViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				252116EE2A720E770092E6B6 /* ViewController.swift in Sources */,
+				2581C7BE2A8308D500C1B209 /* Question6ViewController.swift in Sources */,
+				2581C7BB2A82FF1900C1B209 /* QuestionnaireViewController.swift in Sources */,
 				252116EA2A720E770092E6B6 /* AppDelegate.swift in Sources */,
 				252116F42A720E770092E6B6 /* KickAsh.xcdatamodeld in Sources */,
 				252116EC2A720E770092E6B6 /* SceneDelegate.swift in Sources */,
