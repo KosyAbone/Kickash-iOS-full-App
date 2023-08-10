@@ -22,6 +22,7 @@
 		2581C7D22A84930700C1B209 /* Question5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D12A84930700C1B209 /* Question5ViewController.swift */; };
 		2581C7D42A84941C00C1B209 /* Question7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D32A84941C00C1B209 /* Question7ViewController.swift */; };
 		2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D52A84942600C1B209 /* Question8ViewController.swift */; };
+		37422E862A856629000FA15E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37422E852A856629000FA15E /* HistoryViewController.swift */; };
 		BB8FF6AE2A85284E00691BF7 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */; };
 		BB8FF6B42A85356600691BF7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8FF6B32A85356600691BF7 /* Home.storyboard */; };
 		BB8FF6B62A853D2D00691BF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8FF6B52A853D2D00691BF7 /* RegisterViewController.swift */; };
@@ -45,6 +46,7 @@
 		2581C7D12A84930700C1B209 /* Question5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question5ViewController.swift; sourceTree = "<group>"; };
 		2581C7D32A84941C00C1B209 /* Question7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question7ViewController.swift; sourceTree = "<group>"; };
 		2581C7D52A84942600C1B209 /* Question8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question8ViewController.swift; sourceTree = "<group>"; };
+		37422E852A856629000FA15E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		BB8FF6B32A85356600691BF7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BB8FF6B52A853D2D00691BF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = KickAsh/RegisterViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				BB8FF6B52A853D2D00691BF7 /* RegisterViewController.swift */,
 				BB8FF6B32A85356600691BF7 /* Home.storyboard */,
+				37422E852A856629000FA15E /* HistoryViewController.swift */,
 				252116E82A720E770092E6B6 /* KickAsh */,
 				252116E72A720E770092E6B6 /* Products */,
 			);
@@ -189,6 +192,7 @@
 				2581C7BE2A8308D500C1B209 /* Question6ViewController.swift in Sources */,
 				2581C7CE2A8492C000C1B209 /* Question3ViewController.swift in Sources */,
 				2581C7BB2A82FF1900C1B209 /* Question1ViewController.swift in Sources */,
+				37422E862A856629000FA15E /* HistoryViewController.swift in Sources */,
 				2581C7CC2A84927200C1B209 /* Question2ViewController.swift in Sources */,
 				252116EA2A720E770092E6B6 /* AppDelegate.swift in Sources */,
 				2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */,
