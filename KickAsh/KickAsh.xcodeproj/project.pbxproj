@@ -49,8 +49,7 @@
 		2581C7D12A84930700C1B209 /* Question5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question5ViewController.swift; sourceTree = "<group>"; };
 		2581C7D32A84941C00C1B209 /* Question7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question7ViewController.swift; sourceTree = "<group>"; };
 		2581C7D52A84942600C1B209 /* Question8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question8ViewController.swift; sourceTree = "<group>"; };
-		37422E872A857164000FA15E /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
-		37422E892A85718F000FA15E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		37422E852A856629000FA15E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
 		BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +71,9 @@
 		252116DD2A720E770092E6B6 = {
 			isa = PBXGroup;
 			children = (
+				BB8FF6B52A853D2D00691BF7 /* RegisterViewController.swift */,
+				BB8FF6B32A85356600691BF7 /* Home.storyboard */,
+				37422E852A856629000FA15E /* HistoryViewController.swift */,
 				252116E82A720E770092E6B6 /* KickAsh */,
 				252116E72A720E770092E6B6 /* Products */,
 			);
@@ -204,7 +206,7 @@
 				2581C7BE2A8308D500C1B209 /* Question6ViewController.swift in Sources */,
 				2581C7CE2A8492C000C1B209 /* Question3ViewController.swift in Sources */,
 				2581C7BB2A82FF1900C1B209 /* Question1ViewController.swift in Sources */,
-				37422E8A2A85718F000FA15E /* HistoryViewController.swift in Sources */,
+				37422E862A856629000FA15E /* HistoryViewController.swift in Sources */,
 				2581C7CC2A84927200C1B209 /* Question2ViewController.swift in Sources */,
 				252116EA2A720E770092E6B6 /* AppDelegate.swift in Sources */,
 				2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */,
