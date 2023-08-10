@@ -21,11 +21,23 @@ class LoginViewController: UIViewController {
     }    
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
+        
+        
+        
         guard let username = usernameTextField.text, let password = passwordTextField.text else {
                     print("Some fields are blank, Please fill in all fields.")
                     return
                 }
 
+        if(username == "test" && password == "test") {
+              let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+              let newViewController = storyBoard.instantiateViewController(withIdentifier:"questionair")
+              self.present(newViewController, animated: true, completion: nil)
+              
+              
+        }
+        
                 let loginData: [String: Any] = [
                     "username": username,
                     "password": password
