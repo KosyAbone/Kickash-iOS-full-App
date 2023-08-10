@@ -334,6 +334,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectOption1:" destination="uvA-1p-d2q" eventType="touchUpInside" id="RQx-ty-uu2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnj-Dq-RvM">
                                 <rect key="frame" x="16" y="366" width="361" height="50"/>
@@ -346,6 +349,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectOption2:" destination="uvA-1p-d2q" eventType="touchUpInside" id="iFg-fY-k4Y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ol-cM-U1D">
                                 <rect key="frame" x="16" y="449" width="361" height="50"/>
@@ -358,6 +364,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectOption3:" destination="uvA-1p-d2q" eventType="touchUpInside" id="uK0-zr-UNR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-Dj-Stk">
                                 <rect key="frame" x="304" y="551" width="60" height="35"/>
@@ -370,6 +379,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="nextQuestion:" destination="uvA-1p-d2q" eventType="touchUpInside" id="5Li-ro-xoK"/>
                                     <segue destination="ATg-rg-ecu" kind="show" id="xmT-RU-I6m"/>
                                 </connections>
                             </button>
@@ -386,6 +396,12 @@
                         <color key="backgroundColor" red="0.99607843139999996" green="0.96862745100000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="WOo-jx-R5d"/>
+                    <connections>
+                        <outlet property="nextButton" destination="JiV-Dj-Stk" id="fn3-Bt-SzP"/>
+                        <outlet property="option1Text" destination="oRa-l5-ZgD" id="LgA-QL-s1e"/>
+                        <outlet property="option2Text" destination="Pnj-Dq-RvM" id="xEN-HC-GmF"/>
+                        <outlet property="option3Text" destination="7Ol-cM-U1D" id="4Pr-aV-wsF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqk-pd-gI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
