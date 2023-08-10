@@ -31,6 +31,7 @@
 		BB75FE0E2A856668007FB9A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */; };
 		BB75FE0F2A856668007FB9A8 /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */; };
 		BB75FE102A856668007FB9A8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */; };
+		5A6B47212A858A2D003ED235 /* SocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B47202A858A2D003ED235 /* SocialTableViewCell.swift */; };
 		BB8FF6AE2A85284E00691BF7 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
 		BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
+		5A6B47202A858A2D003ED235 /* SocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTableViewCell.swift; sourceTree = "<group>"; };
 		BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 				5A6B47192A85437F003ED235 /* SocialViewController.swift */,
 				5A6B471E2A85439B003ED235 /* MessageApiHandlers.swift */,
 				5A6B471A2A85437F003ED235 /* Utility.swift */,
+				5A6B47202A858A2D003ED235 /* SocialTableViewCell.swift */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				BB75FE102A856668007FB9A8 /* RegisterViewController.swift in Sources */,
 				252116F42A720E770092E6B6 /* KickAsh.xcdatamodeld in Sources */,
 				252116EC2A720E770092E6B6 /* SceneDelegate.swift in Sources */,
+				5A6B47212A858A2D003ED235 /* SocialTableViewCell.swift in Sources */,
 				2581C7D02A8492E300C1B209 /* Question4ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
