@@ -19,9 +19,7 @@ class RegisterViewController: UIViewController {
     @IBAction func OnRegister(_ sender: Any) {
         
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier:"questionair")
-        self.present(newViewController, animated: true, completion: nil)
+    
         
     }
     /*
