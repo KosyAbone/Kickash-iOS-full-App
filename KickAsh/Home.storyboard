@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
@@ -18,13 +18,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="nnL-PI-ehH"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="nnL-PI-ehH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="990" y="382"/>
         </scene>
-        <!--Item-->
+        <!--Reward-->
         <scene sceneID="gbZ-FK-gS9">
             <objects>
                 <viewController id="iom-07-NZC" sceneMemberID="viewController">
@@ -34,13 +34,13 @@
                         <viewLayoutGuide key="safeArea" id="mgi-3E-0bG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="vEx-Gf-6ou"/>
+                    <tabBarItem key="tabBarItem" title="Reward" image="Wine bar" id="vEx-Gf-6ou"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2j-af-Pb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844" y="383"/>
         </scene>
-        <!--Item-->
+        <!--Social-->
         <scene sceneID="uFk-EO-sYA">
             <objects>
                 <viewController id="UwQ-mE-uQ8" sceneMemberID="viewController">
@@ -50,13 +50,13 @@
                         <viewLayoutGuide key="safeArea" id="koa-DV-3u0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="mE6-hg-mst"/>
+                    <tabBarItem key="tabBarItem" title="Social" image="Chat bubble outline" id="mE6-hg-mst"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Zc-aQ-dQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="282" y="382"/>
         </scene>
-        <!--Item-->
+        <!--Info-->
         <scene sceneID="bU9-ak-gky">
             <objects>
                 <viewController id="XTJ-3g-SYj" sceneMemberID="viewController">
@@ -66,7 +66,7 @@
                         <viewLayoutGuide key="safeArea" id="eYp-lY-4Tm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Qhy-nQ-Hzk"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="Vector" id="Qhy-nQ-Hzk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AvW-FK-nGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,6 +94,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Chat bubble outline" width="25" height="25"/>
+        <image name="Home" width="30" height="30"/>
+        <image name="Vector" width="23" height="23"/>
+        <image name="Wine bar" width="33" height="33"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
