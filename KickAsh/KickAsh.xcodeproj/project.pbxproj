@@ -22,6 +22,7 @@
 		2581C7D22A84930700C1B209 /* Question5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D12A84930700C1B209 /* Question5ViewController.swift */; };
 		2581C7D42A84941C00C1B209 /* Question7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D32A84941C00C1B209 /* Question7ViewController.swift */; };
 		2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D52A84942600C1B209 /* Question8ViewController.swift */; };
+		BB8FF6AE2A85284E00691BF7 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		2581C7D12A84930700C1B209 /* Question5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question5ViewController.swift; sourceTree = "<group>"; };
 		2581C7D32A84941C00C1B209 /* Question7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question7ViewController.swift; sourceTree = "<group>"; };
 		2581C7D52A84942600C1B209 /* Question8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question8ViewController.swift; sourceTree = "<group>"; };
+		BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		252116E82A720E770092E6B6 /* KickAsh */ = {
 			isa = PBXGroup;
 			children = (
+				BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */,
 				2581C7BC2A83089800C1B209 /* QuestionnaireViews */,
 				252116E92A720E770092E6B6 /* AppDelegate.swift */,
 				252116EB2A720E770092E6B6 /* SceneDelegate.swift */,
@@ -160,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB8FF6AE2A85284E00691BF7 /* Authentication.storyboard in Resources */,
 				252116F92A720E790092E6B6 /* LaunchScreen.storyboard in Resources */,
 				252116F62A720E790092E6B6 /* Assets.xcassets in Resources */,
 				252116F12A720E770092E6B6 /* Main.storyboard in Resources */,
