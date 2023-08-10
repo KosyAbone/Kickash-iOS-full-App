@@ -2,3 +2,7 @@ KickAsh/KickAsh.xcodeproj/project.xcworkspace/xcuserdata/builder.xcuserdatad/Use
 .DS_Store
 KickAsh/KickAsh.xcodeproj/xcuserdata/builder.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 KickAsh/KickAsh.xcodeproj/xcuserdata/builder.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/

@@ -1,13 +1,13 @@
 //
-//  RegisterViewController.swift
+//  HistoryViewController.swift
 //  KickAsh
 //
-//  Created by subash on 2023-08-10.
+//  Created by Sujay Kumar Yeddu on 2023-08-10.
 //
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class HistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,12 +16,6 @@ class RegisterViewController: UIViewController {
     }
     
 
-    @IBAction func OnRegister(_ sender: Any) {
-        
-        
-    
-        
-    }
     /*
     // MARK: - Navigation
 
