@@ -22,6 +22,8 @@
 		2581C7D22A84930700C1B209 /* Question5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D12A84930700C1B209 /* Question5ViewController.swift */; };
 		2581C7D42A84941C00C1B209 /* Question7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D32A84941C00C1B209 /* Question7ViewController.swift */; };
 		2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D52A84942600C1B209 /* Question8ViewController.swift */; };
+		37422E882A857164000FA15E /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37422E872A857164000FA15E /* History.storyboard */; };
+		37422E8A2A85718F000FA15E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37422E892A85718F000FA15E /* HistoryViewController.swift */; };
 		BB75FE0E2A856668007FB9A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */; };
 		BB75FE0F2A856668007FB9A8 /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */; };
 		BB75FE102A856668007FB9A8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */; };
@@ -47,6 +49,8 @@
 		2581C7D12A84930700C1B209 /* Question5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question5ViewController.swift; sourceTree = "<group>"; };
 		2581C7D32A84941C00C1B209 /* Question7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question7ViewController.swift; sourceTree = "<group>"; };
 		2581C7D52A84942600C1B209 /* Question8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question8ViewController.swift; sourceTree = "<group>"; };
+		37422E872A857164000FA15E /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		37422E892A85718F000FA15E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
 		BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				252116F72A720E790092E6B6 /* LaunchScreen.storyboard */,
 				252116FA2A720E790092E6B6 /* Info.plist */,
 				252116F22A720E770092E6B6 /* KickAsh.xcdatamodeld */,
+				37422E872A857164000FA15E /* History.storyboard */,
+				37422E892A85718F000FA15E /* HistoryViewController.swift */,
 			);
 			path = KickAsh;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 				252116F92A720E790092E6B6 /* LaunchScreen.storyboard in Resources */,
 				252116F62A720E790092E6B6 /* Assets.xcassets in Resources */,
 				252116F12A720E770092E6B6 /* Main.storyboard in Resources */,
+				37422E882A857164000FA15E /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +204,7 @@
 				2581C7BE2A8308D500C1B209 /* Question6ViewController.swift in Sources */,
 				2581C7CE2A8492C000C1B209 /* Question3ViewController.swift in Sources */,
 				2581C7BB2A82FF1900C1B209 /* Question1ViewController.swift in Sources */,
+				37422E8A2A85718F000FA15E /* HistoryViewController.swift in Sources */,
 				2581C7CC2A84927200C1B209 /* Question2ViewController.swift in Sources */,
 				252116EA2A720E770092E6B6 /* AppDelegate.swift in Sources */,
 				2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */,
