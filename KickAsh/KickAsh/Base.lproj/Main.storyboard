@@ -68,7 +68,7 @@
         <!--Questionnaire View Controller-->
         <scene sceneID="NdY-qq-4fT">
             <objects>
-                <viewController id="efK-cS-SO4" userLabel="Questionnaire View Controller" customClass="QuestionnaireViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="efK-cS-SO4" userLabel="Questionnaire View Controller" customClass="Question1ViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FqA-qq-uBU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
