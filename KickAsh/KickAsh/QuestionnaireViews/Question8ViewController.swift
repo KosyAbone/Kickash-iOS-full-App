@@ -9,6 +9,9 @@ import UIKit
 
 class Question8ViewController: UIViewController {
     
+    var username = "test"
+    var finalGoalDate : Date!
+    
     @IBOutlet weak var goalDate: UIDatePicker!
     
 
@@ -30,8 +33,14 @@ class Question8ViewController: UIViewController {
     */
     
     @IBAction func setGoal(_ sender: UIDatePicker) {
-        let selectedDate = sender.date
-        print(selectedDate)
+        finalGoalDate = sender.date
+        //print("Goal: ", goalDate)
+    }
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        UserDefaults.standard.set(finalGoalDate, forKey: QuestionnaireDataKey.question8 + username)
+        
+//        print("Goal: ", UserDefaults.standard.string(forKey: QuestionnaireDataKey.question8 + username)!)
     }
     
 }
