@@ -22,6 +22,13 @@
 		2581C7D22A84930700C1B209 /* Question5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D12A84930700C1B209 /* Question5ViewController.swift */; };
 		2581C7D42A84941C00C1B209 /* Question7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D32A84941C00C1B209 /* Question7ViewController.swift */; };
 		2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D52A84942600C1B209 /* Question8ViewController.swift */; };
+		37422E882A857164000FA15E /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37422E872A857164000FA15E /* History.storyboard */; };
+		37422E8A2A85718F000FA15E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37422E892A85718F000FA15E /* HistoryViewController.swift */; };
+		BB75FE0E2A856668007FB9A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */; };
+		BB75FE0F2A856668007FB9A8 /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */; };
+		BB75FE102A856668007FB9A8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */; };
+		BB8FF6AE2A85284E00691BF7 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */; };
+		BB8FF6B42A85356600691BF7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8FF6B32A85356600691BF7 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +49,12 @@
 		2581C7D12A84930700C1B209 /* Question5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question5ViewController.swift; sourceTree = "<group>"; };
 		2581C7D32A84941C00C1B209 /* Question7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question7ViewController.swift; sourceTree = "<group>"; };
 		2581C7D52A84942600C1B209 /* Question8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question8ViewController.swift; sourceTree = "<group>"; };
+		37422E852A856629000FA15E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
+		BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
+		BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		BB8FF6B32A85356600691BF7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,9 @@
 		252116DD2A720E770092E6B6 = {
 			isa = PBXGroup;
 			children = (
+				BB8FF6B52A853D2D00691BF7 /* RegisterViewController.swift */,
+				BB8FF6B32A85356600691BF7 /* Home.storyboard */,
+				37422E852A856629000FA15E /* HistoryViewController.swift */,
 				252116E82A720E770092E6B6 /* KickAsh */,
 				252116E72A720E770092E6B6 /* Products */,
 			);
@@ -74,6 +90,11 @@
 		252116E82A720E770092E6B6 /* KickAsh */ = {
 			isa = PBXGroup;
 			children = (
+				BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */,
+				BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */,
+				BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */,
+				BB8FF6B32A85356600691BF7 /* Home.storyboard */,
+				BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */,
 				2581C7BC2A83089800C1B209 /* QuestionnaireViews */,
 				252116E92A720E770092E6B6 /* AppDelegate.swift */,
 				252116EB2A720E770092E6B6 /* SceneDelegate.swift */,
@@ -83,6 +104,8 @@
 				252116F72A720E790092E6B6 /* LaunchScreen.storyboard */,
 				252116FA2A720E790092E6B6 /* Info.plist */,
 				252116F22A720E770092E6B6 /* KickAsh.xcdatamodeld */,
+				37422E872A857164000FA15E /* History.storyboard */,
+				37422E892A85718F000FA15E /* HistoryViewController.swift */,
 			);
 			path = KickAsh;
 			sourceTree = "<group>";
@@ -160,9 +183,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB8FF6AE2A85284E00691BF7 /* Authentication.storyboard in Resources */,
+				BB8FF6B42A85356600691BF7 /* Home.storyboard in Resources */,
 				252116F92A720E790092E6B6 /* LaunchScreen.storyboard in Resources */,
 				252116F62A720E790092E6B6 /* Assets.xcassets in Resources */,
 				252116F12A720E770092E6B6 /* Main.storyboard in Resources */,
+				37422E882A857164000FA15E /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,15 +199,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB75FE0E2A856668007FB9A8 /* LoginViewController.swift in Sources */,
+				BB75FE0F2A856668007FB9A8 /* VerifyEmailViewController.swift in Sources */,
 				2581C7D22A84930700C1B209 /* Question5ViewController.swift in Sources */,
 				252116EE2A720E770092E6B6 /* ViewController.swift in Sources */,
 				2581C7BE2A8308D500C1B209 /* Question6ViewController.swift in Sources */,
 				2581C7CE2A8492C000C1B209 /* Question3ViewController.swift in Sources */,
 				2581C7BB2A82FF1900C1B209 /* Question1ViewController.swift in Sources */,
+				37422E862A856629000FA15E /* HistoryViewController.swift in Sources */,
 				2581C7CC2A84927200C1B209 /* Question2ViewController.swift in Sources */,
 				252116EA2A720E770092E6B6 /* AppDelegate.swift in Sources */,
 				2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */,
 				2581C7D42A84941C00C1B209 /* Question7ViewController.swift in Sources */,
+				BB75FE102A856668007FB9A8 /* RegisterViewController.swift in Sources */,
 				252116F42A720E770092E6B6 /* KickAsh.xcdatamodeld in Sources */,
 				252116EC2A720E770092E6B6 /* SceneDelegate.swift in Sources */,
 				2581C7D02A8492E300C1B209 /* Question4ViewController.swift in Sources */,
@@ -335,7 +365,7 @@
 				INFOPLIST_FILE = KickAsh/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Home;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -362,7 +392,7 @@
 				INFOPLIST_FILE = KickAsh/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Home;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
