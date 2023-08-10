@@ -9,6 +9,8 @@ import UIKit
 
 class Question2ViewController: UIViewController, UITextFieldDelegate {
     
+    var username = "test"
+    
     @IBOutlet weak var numberText : UITextField!
     @IBOutlet weak var numberStepper : UIStepper!
 
@@ -34,4 +36,16 @@ class Question2ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         numberText.text = String(Int(sender.value))
     }
+    
+    @IBAction func nextQuestion(_ sender: UIButton) {
+        UserDefaults.standard.set(numberText.text, forKey: QuestionnaireDataKey.question2 + username)
+        if let value = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question2 + username){
+            print(value)
+        }
+        
+    }
 }
+
+//struct Question2Key {
+//    static let question2 = "How many cigarettes do you consume daily on an average? - "
+//}
