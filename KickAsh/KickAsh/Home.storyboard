@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6KW-wC-Zgd">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,7 +42,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0D 0H 10M 20S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVG-eB-lJr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0D 5H 10M 20S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVG-eB-lJr">
                                                 <rect key="frame" x="68" y="168" width="300" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <nil key="textColor"/>
@@ -93,6 +93,9 @@
                                                         <color key="backgroundColor" red="0.4039215686" green="0.31372549020000001" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="smokeCounter:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pOe-ai-nWR"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-5b-Hny">
                                                 <rect key="frame" x="172" y="514" width="145" height="35"/>
@@ -106,7 +109,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkA-if-Ilt">
-                                                <rect key="frame" x="0.0" y="508" width="359" height="115"/>
+                                                <rect key="frame" x="25" y="575" width="359" height="115"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Progress ">
@@ -173,6 +176,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="nnL-PI-ehH"/>
+                    <connections>
+                        <outlet property="smokeCounterLabel" destination="TLK-5b-Hny" id="EkM-yE-mFR"/>
+                        <outlet property="smokingCounter" destination="K34-Kr-Bo8" id="AZi-z0-cnB"/>
+                        <outlet property="warningText" destination="Dgs-9w-ja1" id="baG-rL-TpC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -733,7 +741,7 @@
                                 <rect key="frame" x="16" y="437" width="394" height="465"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">Quitting smoking is a significant decision that brings numerous health benefits and improvements in quality of life. Here are 10 key points about quitting smoking:
+                                <string key="text">Quitting smoking is a significant decision that brings numerous health benefits and improvements in quality of life. Here are 10 key points about quitting smoking:
 
     Health Improvements: Quitting smoking leads to a reduction in the risk of heart disease, stroke, lung diseases, and various cancers.
 
@@ -743,7 +751,7 @@
 
     Enhanced Sense of Taste and Smell: Your senses of taste and smell become sharper, making food and aromas more enjoyable.
 
-    Improved Skin Health: Your skin's appearance can improve, as smoking can cause premature aging, wrinkles, and a dull complexion.</mutableString>
+    Improved Skin Health: Your skin's appearance can improve, as smoking can cause premature aging, wrinkles, and a dull complexion.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
