@@ -24,11 +24,16 @@
 		2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D52A84942600C1B209 /* Question8ViewController.swift */; };
 		259BB4632A859A2200A67D99 /* QuestionnaireEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259BB4622A859A2200A67D99 /* QuestionnaireEndViewController.swift */; };
 		259BB4652A859D2B00A67D99 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259BB4642A859D2B00A67D99 /* HomeViewController.swift */; };
+		5A6B471B2A85437F003ED235 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B47182A85437F003ED235 /* MessageModel.swift */; };
+		5A6B471C2A85437F003ED235 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B47192A85437F003ED235 /* SocialViewController.swift */; };
+		5A6B471D2A85437F003ED235 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B471A2A85437F003ED235 /* Utility.swift */; };
+		5A6B471F2A85439B003ED235 /* MessageApiHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B471E2A85439B003ED235 /* MessageApiHandlers.swift */; };
 		37422E882A857164000FA15E /* (null) in Resources */ = {isa = PBXBuildFile; };
 		37422E8E2A858A30000FA15E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37422E8D2A858A30000FA15E /* Home.storyboard */; };
 		BB75FE0E2A856668007FB9A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */; };
 		BB75FE0F2A856668007FB9A8 /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */; };
 		BB75FE102A856668007FB9A8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */; };
+		5A6B47212A858A2D003ED235 /* SocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B47202A858A2D003ED235 /* SocialTableViewCell.swift */; };
 		BB8FF6AE2A85284E00691BF7 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -50,13 +55,21 @@
 		2581C7D12A84930700C1B209 /* Question5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question5ViewController.swift; sourceTree = "<group>"; };
 		2581C7D32A84941C00C1B209 /* Question7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question7ViewController.swift; sourceTree = "<group>"; };
 		2581C7D52A84942600C1B209 /* Question8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question8ViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		259BB4622A859A2200A67D99 /* QuestionnaireEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireEndViewController.swift; sourceTree = "<group>"; };
 		259BB4642A859D2B00A67D99 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+=======
+		5A6B47182A85437F003ED235 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		5A6B47192A85437F003ED235 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
+		5A6B471A2A85437F003ED235 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		5A6B471E2A85439B003ED235 /* MessageApiHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageApiHandlers.swift; sourceTree = "<group>"; };
+>>>>>>> 66eb9a310fd74cc591a6fe33dd15b9a68ee570ed
 		37422E852A856629000FA15E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		37422E8D2A858A30000FA15E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
 		BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
+		5A6B47202A858A2D003ED235 /* SocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTableViewCell.swift; sourceTree = "<group>"; };
 		BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +109,7 @@
 				BB75FE0D2A856668007FB9A8 /* RegisterViewController.swift */,
 				BB75FE0C2A856668007FB9A8 /* VerifyEmailViewController.swift */,
 				BB8FF6AD2A85284E00691BF7 /* Authentication.storyboard */,
+				5A6B47172A854306003ED235 /* Social */,
 				2581C7BC2A83089800C1B209 /* QuestionnaireViews */,
 				252116E92A720E770092E6B6 /* AppDelegate.swift */,
 				252116EB2A720E770092E6B6 /* SceneDelegate.swift */,
@@ -124,6 +138,18 @@
 				259BB4622A859A2200A67D99 /* QuestionnaireEndViewController.swift */,
 			);
 			path = QuestionnaireViews;
+			sourceTree = "<group>";
+		};
+		5A6B47172A854306003ED235 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				5A6B47182A85437F003ED235 /* MessageModel.swift */,
+				5A6B47192A85437F003ED235 /* SocialViewController.swift */,
+				5A6B471E2A85439B003ED235 /* MessageApiHandlers.swift */,
+				5A6B471A2A85437F003ED235 /* Utility.swift */,
+				5A6B47202A858A2D003ED235 /* SocialTableViewCell.swift */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,15 +233,20 @@
 				252116EE2A720E770092E6B6 /* ViewController.swift in Sources */,
 				2581C7BE2A8308D500C1B209 /* Question6ViewController.swift in Sources */,
 				2581C7CE2A8492C000C1B209 /* Question3ViewController.swift in Sources */,
+				5A6B471F2A85439B003ED235 /* MessageApiHandlers.swift in Sources */,
 				2581C7BB2A82FF1900C1B209 /* Question1ViewController.swift in Sources */,
+				5A6B471D2A85437F003ED235 /* Utility.swift in Sources */,
 				2581C7CC2A84927200C1B209 /* Question2ViewController.swift in Sources */,
+				5A6B471B2A85437F003ED235 /* MessageModel.swift in Sources */,
 				252116EA2A720E770092E6B6 /* AppDelegate.swift in Sources */,
 				2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */,
+				5A6B471C2A85437F003ED235 /* SocialViewController.swift in Sources */,
 				2581C7D42A84941C00C1B209 /* Question7ViewController.swift in Sources */,
 				BB75FE102A856668007FB9A8 /* RegisterViewController.swift in Sources */,
 				259BB4632A859A2200A67D99 /* QuestionnaireEndViewController.swift in Sources */,
 				252116F42A720E770092E6B6 /* KickAsh.xcdatamodeld in Sources */,
 				252116EC2A720E770092E6B6 /* SceneDelegate.swift in Sources */,
+				5A6B47212A858A2D003ED235 /* SocialTableViewCell.swift in Sources */,
 				2581C7D02A8492E300C1B209 /* Question4ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
