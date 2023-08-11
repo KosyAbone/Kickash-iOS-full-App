@@ -2,12 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-<<<<<<< HEAD
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-=======
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
->>>>>>> 6c77a452fef1534ab64cc59ba11702dbc637074e
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1072,7 +1068,7 @@
         <!--QuestionnaireEnd View Controller-->
         <scene sceneID="OrU-Yj-lf5">
             <objects>
-                <viewController id="ouK-3V-qoj" userLabel="QuestionnaireEnd View Controller" sceneMemberID="viewController">
+                <viewController id="ouK-3V-qoj" userLabel="QuestionnaireEnd View Controller" customClass="QuestionnaireEndViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bde-rO-Y5v">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1118,6 +1114,9 @@
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="displayHome:" destination="ouK-3V-qoj" eventType="touchUpInside" id="Uj3-J4-wE7"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="celebrate" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-nP-NjD">
                                 <rect key="frame" x="54" y="101" width="285" height="167"/>
@@ -1129,6 +1128,9 @@
                         <color key="backgroundColor" red="0.99607843139999996" green="0.96862745100000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="M0f-RQ-vAA"/>
+                    <connections>
+                        <outlet property="DisplayHomeButton" destination="MBu-Jt-rCu" id="8Qm-bQ-Pf8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yle-mM-TEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

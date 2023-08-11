@@ -22,6 +22,8 @@
 		2581C7D22A84930700C1B209 /* Question5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D12A84930700C1B209 /* Question5ViewController.swift */; };
 		2581C7D42A84941C00C1B209 /* Question7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D32A84941C00C1B209 /* Question7ViewController.swift */; };
 		2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C7D52A84942600C1B209 /* Question8ViewController.swift */; };
+		259BB4632A859A2200A67D99 /* QuestionnaireEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259BB4622A859A2200A67D99 /* QuestionnaireEndViewController.swift */; };
+		259BB4652A859D2B00A67D99 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259BB4642A859D2B00A67D99 /* HomeViewController.swift */; };
 		37422E882A857164000FA15E /* (null) in Resources */ = {isa = PBXBuildFile; };
 		37422E8E2A858A30000FA15E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37422E8D2A858A30000FA15E /* Home.storyboard */; };
 		BB75FE0E2A856668007FB9A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */; };
@@ -48,6 +50,8 @@
 		2581C7D12A84930700C1B209 /* Question5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question5ViewController.swift; sourceTree = "<group>"; };
 		2581C7D32A84941C00C1B209 /* Question7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question7ViewController.swift; sourceTree = "<group>"; };
 		2581C7D52A84942600C1B209 /* Question8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question8ViewController.swift; sourceTree = "<group>"; };
+		259BB4622A859A2200A67D99 /* QuestionnaireEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireEndViewController.swift; sourceTree = "<group>"; };
+		259BB4642A859D2B00A67D99 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		37422E852A856629000FA15E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		37422E8D2A858A30000FA15E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				252116F72A720E790092E6B6 /* LaunchScreen.storyboard */,
 				252116FA2A720E790092E6B6 /* Info.plist */,
 				252116F22A720E770092E6B6 /* KickAsh.xcdatamodeld */,
+				259BB4642A859D2B00A67D99 /* HomeViewController.swift */,
 			);
 			path = KickAsh;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 				2581C7D12A84930700C1B209 /* Question5ViewController.swift */,
 				2581C7D32A84941C00C1B209 /* Question7ViewController.swift */,
 				2581C7D52A84942600C1B209 /* Question8ViewController.swift */,
+				259BB4622A859A2200A67D99 /* QuestionnaireEndViewController.swift */,
 			);
 			path = QuestionnaireViews;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 				BB75FE0E2A856668007FB9A8 /* LoginViewController.swift in Sources */,
 				BB75FE0F2A856668007FB9A8 /* VerifyEmailViewController.swift in Sources */,
 				2581C7D22A84930700C1B209 /* Question5ViewController.swift in Sources */,
+				259BB4652A859D2B00A67D99 /* HomeViewController.swift in Sources */,
 				252116EE2A720E770092E6B6 /* ViewController.swift in Sources */,
 				2581C7BE2A8308D500C1B209 /* Question6ViewController.swift in Sources */,
 				2581C7CE2A8492C000C1B209 /* Question3ViewController.swift in Sources */,
@@ -206,6 +213,7 @@
 				2581C7D62A84942600C1B209 /* Question8ViewController.swift in Sources */,
 				2581C7D42A84941C00C1B209 /* Question7ViewController.swift in Sources */,
 				BB75FE102A856668007FB9A8 /* RegisterViewController.swift in Sources */,
+				259BB4632A859A2200A67D99 /* QuestionnaireEndViewController.swift in Sources */,
 				252116F42A720E770092E6B6 /* KickAsh.xcdatamodeld in Sources */,
 				252116EC2A720E770092E6B6 /* SceneDelegate.swift in Sources */,
 				2581C7D02A8492E300C1B209 /* Question4ViewController.swift in Sources */,

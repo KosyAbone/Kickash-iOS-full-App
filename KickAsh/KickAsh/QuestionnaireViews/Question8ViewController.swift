@@ -40,12 +40,6 @@ class Question8ViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         UserDefaults.standard.set(finalGoalDate, forKey: QuestionnaireDataKey.question8 + username)
         
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier:"tabController")
-        self.present(newViewController, animated: true, completion: nil)
-        
-        
 //        print("Goal: ", UserDefaults.standard.string(forKey: QuestionnaireDataKey.question8 + username)!)
     }
     

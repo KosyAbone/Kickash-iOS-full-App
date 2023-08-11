@@ -32,10 +32,20 @@ class LoginViewController: UIViewController {
 
         if(username == "test" && password == "test") {
               let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-              let newViewController = storyBoard.instantiateViewController(withIdentifier:"questionair")
-              self.present(newViewController, animated: true, completion: nil)
-              
-              
+            let goal = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question8 + username)
+            if goal != nil{
+                let newViewController = storyBoard.instantiateViewController(withIdentifier:"questionair")
+                newViewController.modalPresentationStyle = .fullScreen
+                newViewController.isModalInPresentation = true
+                self.present(newViewController, animated: true, completion: nil)
+            }
+            else {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier:"tabController")
+                newViewController.modalPresentationStyle = .fullScreen
+                newViewController.isModalInPresentation = true
+                self.present(newViewController, animated: true, completion: nil)
+            }
         }
         
                 let loginData: [String: Any] = [
