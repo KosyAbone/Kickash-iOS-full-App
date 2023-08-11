@@ -9,7 +9,7 @@ import UIKit
 
 class Question8ViewController: UIViewController {
     
-    var username = "test"
+    var username : String!
     var finalGoalDate : Date!
     
     @IBOutlet weak var goalDate: UIDatePicker!
@@ -18,7 +18,8 @@ class Question8ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        username = UserDefaults.standard.string(forKey: "Username")
+        finalGoalDate = goalDate.date
     }
     
 
@@ -40,7 +41,7 @@ class Question8ViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         UserDefaults.standard.set(finalGoalDate, forKey: QuestionnaireDataKey.question8 + username)
         
-//        print("Goal: ", UserDefaults.standard.string(forKey: QuestionnaireDataKey.question8 + username)!)
+        //print("Goal: ", finalGoalDate)
     }
     
 }

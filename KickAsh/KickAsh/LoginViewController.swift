@@ -85,6 +85,7 @@ class LoginViewController: UIViewController {
                            let token = json["token"] as? String {
                             // Save the token for future use
                             UserDefaults.standard.set(token, forKey: "AuthToken")
+                            UserDefaults.standard.set(username, forKey: "Username")
                             print("User logged in successfully.")
 
                             
@@ -94,7 +95,22 @@ class LoginViewController: UIViewController {
                             
                             
                             DispatchQueue.main.async {
-                                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+                                let goal = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question8 + username)
+                                print("Goal Set!!!", goal)
+                                if goal == nil{
+                                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                    let newViewController = storyBoard.instantiateViewController(withIdentifier:"questionair")
+                                    newViewController.modalPresentationStyle = .fullScreen
+                                    newViewController.isModalInPresentation = true
+                                    self.present(newViewController, animated: true, completion: nil)
+                              }
+                              else {
+                                  let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+                                  let newViewController = storyBoard.instantiateViewController(withIdentifier:"tabController")
+                                  newViewController.modalPresentationStyle = .fullScreen
+                                  newViewController.isModalInPresentation = true
+                                  self.present(newViewController, animated: true, completion: nil)
+                              }
                             }
                         } else {
                             DispatchQueue.main.async {

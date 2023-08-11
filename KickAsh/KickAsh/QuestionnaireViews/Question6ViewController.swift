@@ -15,7 +15,7 @@ class Question6ViewController: UIViewController {
     var option4Selected : Bool = false
     var option5Selected : Bool = false
     var checkboxColor : UIColor!
-    var username = "test"
+    var username : String!
     var nextButtonColor : UIColor!
     
     @IBOutlet weak var option1Text: UILabel!
@@ -32,6 +32,8 @@ class Question6ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        username = UserDefaults.standard.string(forKey: "Username")
             
         let boxColor = "#6750A4"
         if let color = UIColor(hexString: boxColor){

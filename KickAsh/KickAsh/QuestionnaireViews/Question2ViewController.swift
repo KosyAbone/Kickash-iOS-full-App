@@ -9,13 +9,15 @@ import UIKit
 
 class Question2ViewController: UIViewController, UITextFieldDelegate {
     
-    var username = "test"
+    var username : String!
     
     @IBOutlet weak var numberText : UITextField!
     @IBOutlet weak var numberStepper : UIStepper!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        username = UserDefaults.standard.string(forKey: "Username")
 
         numberText.delegate = self
         numberStepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)

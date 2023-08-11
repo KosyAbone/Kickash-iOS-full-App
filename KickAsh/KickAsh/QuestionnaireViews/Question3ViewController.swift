@@ -9,7 +9,7 @@ import UIKit
 
 class Question3ViewController: UIViewController {
     
-    var username = "test"
+    var username :String!
     var selectedButtonColor : UIColor!
     var nextButtonColor : UIColor!
     
@@ -20,6 +20,8 @@ class Question3ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        username = UserDefaults.standard.string(forKey: "Username")
 
         let hexColor = "#8C6EE3"
         if let color = UIColor(hexString: hexColor) {

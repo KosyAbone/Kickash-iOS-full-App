@@ -1128,9 +1128,6 @@
                         <color key="backgroundColor" red="0.99607843139999996" green="0.96862745100000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="M0f-RQ-vAA"/>
-                    <connections>
-                        <outlet property="DisplayHomeButton" destination="MBu-Jt-rCu" id="8Qm-bQ-Pf8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yle-mM-TEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
