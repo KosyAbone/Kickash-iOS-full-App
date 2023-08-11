@@ -22,9 +22,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        
-        
-        
         guard let username = usernameTextField.text, let password = passwordTextField.text else {
                     print("Some fields are blank, Please fill in all fields.")
                     return
