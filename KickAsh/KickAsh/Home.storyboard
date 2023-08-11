@@ -222,6 +222,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0w-yH-hCl">
+                                        <rect key="frame" x="-20" y="8" width="430" height="153"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <segue destination="Qqr-gH-C3S" kind="show" id="t5v-UK-yBv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KlU-cn-tcv" customClass="UIButton">
@@ -253,6 +262,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVS-Nf-gim">
+                                        <rect key="frame" x="8" y="-4" width="430" height="153"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <segue destination="Qqr-gH-C3S" kind="show" id="eXi-ab-SYO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6LL-sN-zUE">
@@ -284,6 +302,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXb-Pu-zMu">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="153"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <segue destination="Qqr-gH-C3S" kind="showDetail" id="vC7-rp-kh3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-4G-8fI">
@@ -315,13 +342,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJa-NA-Uyi">
+                                        <rect key="frame" x="-40" y="-4" width="471" height="153"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <segue destination="Qqr-gH-C3S" kind="showDetail" id="NZO-nk-4LE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mgi-3E-0bG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Articles" image="Wine bar" id="vEx-Gf-6ou"/>
+                    <tabBarItem key="tabBarItem" title="Articles" image="doc" catalog="system" id="vEx-Gf-6ou"/>
                     <navigationItem key="navigationItem" id="iAV-ZI-5QK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2j-af-Pb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -679,7 +715,7 @@
             <objects>
                 <viewController id="Qqr-gH-C3S" userLabel="ArticleDetails" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iej-0f-qsv">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Article Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUK-Km-yD0">
@@ -689,15 +725,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXZ-zs-cOQ" userLabel="ArticleImageIV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="article_1" translatesAutoresizingMaskIntoConstraints="NO" id="fXZ-zs-cOQ" userLabel="ArticleImageIV">
                                 <rect key="frame" x="16" y="116" width="361" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pSS-Kl-KUv" userLabel="DescriptionTV">
-                                <rect key="frame" x="16" y="437" width="361" height="381"/>
+                                <rect key="frame" x="16" y="437" width="394" height="465"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Quitting smoking is a significant decision that brings numerous health benefits and improvements in quality of life. Here are 10 key points about quitting smoking:
+
+    Health Improvements: Quitting smoking leads to a reduction in the risk of heart disease, stroke, lung diseases, and various cancers.
+
+    Breathing Easier: Your lung function improves, allowing you to breathe more easily and engage in physical activities without getting out of breath.
+
+    Financial Savings: Quitting smoking saves you a substantial amount of money that you would have otherwise spent on cigarettes.
+
+    Enhanced Sense of Taste and Smell: Your senses of taste and smell become sharper, making food and aromas more enjoyable.
+
+    Improved Skin Health: Your skin's appearance can improve, as smoking can cause premature aging, wrinkles, and a dull complexion.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -719,20 +765,24 @@
                         <viewLayoutGuide key="safeArea" id="amO-KQ-xFj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="85a-id-4Cx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afv-Yt-PHi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-353" y="1222"/>
+            <point key="canvasLocation" x="-353.02325581395348" y="1221.8884120171674"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eXi-ab-SYO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Chat bubble outline" width="25" height="25"/>
         <image name="Home" width="30" height="30"/>
         <image name="Kickash" width="741" height="110"/>
         <image name="Vector" width="23" height="23"/>
-        <image name="Wine bar" width="33" height="33"/>
         <image name="article2" width="1920" height="1276"/>
         <image name="article_1" width="1300" height="861"/>
+        <image name="doc" catalog="system" width="115" height="128"/>
         <image name="goal" width="889" height="814"/>
         <image name="home_main" width="1172" height="659"/>
         <image name="image1" width="6016" height="4016"/>
