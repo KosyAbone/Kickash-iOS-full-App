@@ -55,15 +55,12 @@
 		2581C7D12A84930700C1B209 /* Question5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question5ViewController.swift; sourceTree = "<group>"; };
 		2581C7D32A84941C00C1B209 /* Question7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question7ViewController.swift; sourceTree = "<group>"; };
 		2581C7D52A84942600C1B209 /* Question8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question8ViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		259BB4622A859A2200A67D99 /* QuestionnaireEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireEndViewController.swift; sourceTree = "<group>"; };
 		259BB4642A859D2B00A67D99 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-=======
 		5A6B47182A85437F003ED235 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		5A6B47192A85437F003ED235 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		5A6B471A2A85437F003ED235 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		5A6B471E2A85439B003ED235 /* MessageApiHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageApiHandlers.swift; sourceTree = "<group>"; };
->>>>>>> 66eb9a310fd74cc591a6fe33dd15b9a68ee570ed
 		37422E852A856629000FA15E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		37422E8D2A858A30000FA15E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BB75FE0B2A856668007FB9A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
