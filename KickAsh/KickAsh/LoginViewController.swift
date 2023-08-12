@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                     "password": password
                 ]
 
-                let url = URL(string: "https://kickash-api-76oq.onrender.com/auth/login")!
+                let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/auth/login")!
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -92,14 +92,16 @@ class LoginViewController: UIViewController {
                             
                             
                             DispatchQueue.main.async {
-                                let goal = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question8 + username)
-                                print("Goal Set!!!", goal)
-                                if goal == nil{
+                                let completed = UserDefaults.standard.bool(forKey: "QuestionnaireCompleted-" + username)
+                                //print("Goal Set!!!", completed)
+                                if !completed{
                                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                                     let newViewController = storyBoard.instantiateViewController(withIdentifier:"questionair")
                                     newViewController.modalPresentationStyle = .fullScreen
                                     newViewController.isModalInPresentation = true
                                     self.present(newViewController, animated: true, completion: nil)
+                                    
+                                    UserDefaults.standard.set(true, forKey: "QuestionnaireCompleted-" + username)
                               }
                               else {
                                   let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
@@ -116,7 +118,7 @@ class LoginViewController: UIViewController {
                         }
                     } catch {
                         DispatchQueue.main.async {
-                            print("Invalid response format.")
+                            print("Invalid response format. \(error.localizedDescription)")
                         }
                     }
                 }

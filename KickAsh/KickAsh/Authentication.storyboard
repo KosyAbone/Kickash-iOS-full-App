@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,7 +59,7 @@
         <!--Login View Controller-->
         <scene sceneID="WeC-bc-HPx">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="pHb-zX-85r" customClass="LoginViewController" customModule="register_login" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="pHb-zX-85r" customClass="LoginViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y0e-7D-lym">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,7 +152,7 @@
         <!--Register View Controller-->
         <scene sceneID="OJW-GE-AcN">
             <objects>
-                <viewController id="R1f-HI-cZS" customClass="RegisterViewController" customModule="register_login" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R1f-HI-cZS" customClass="RegisterViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TEL-Np-TVp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,7 +302,7 @@
         <!--Verify Email View Controller-->
         <scene sceneID="Ug5-7J-ZKQ">
             <objects>
-                <viewController storyboardIdentifier="VerifyEmailViewController" id="PL9-Cv-iM0" customClass="VerifyEmailViewController" customModule="register_login" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerifyEmailViewController" id="PL9-Cv-iM0" customClass="VerifyEmailViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7oX-Ed-zlA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -16,7 +16,7 @@ class VerifyEmailViewController: UIViewController {
                     "email": userEmail
                 ]
 
-                let url = URL(string: "https://kickash-api-76oq.onrender.com/auth/verify-email")!
+                let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/auth/verify-email")!
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")

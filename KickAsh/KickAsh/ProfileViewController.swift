@@ -1,25 +1,23 @@
 //
-//  QuestionnaireEndViewController.swift
+//  ProfileViewController.swift
 //  KickAsh
 //
-//  Created by Ilham Sheikh on 2023-08-10.
+//  Created by Ilham Sheikh on 2023-08-11.
 //
 
 import UIKit
 
-class QuestionnaireEndViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func displayHome(_ sender: UIButton) {
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier:"tabController")
+    @IBAction func logout(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier:"login")
         newViewController.modalPresentationStyle = .fullScreen
         newViewController.isModalInPresentation = true
         self.present(newViewController, animated: true, completion: nil)

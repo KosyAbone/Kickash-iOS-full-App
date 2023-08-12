@@ -38,22 +38,13 @@
                                                     <constraint firstAttribute="height" constant="21" id="bmO-eT-c1d"/>
                                                     <constraint firstAttribute="width" constant="154" id="ecd-Dd-UzI"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0D 5H 10M 20S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVG-eB-lJr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVG-eB-lJr">
                                                 <rect key="frame" x="68" y="168" width="300" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Smoke Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNo-TF-tDV">
-                                                <rect key="frame" x="224" y="140" width="126" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="3hX-Te-OiU"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -73,11 +64,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal for the Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZy-VJ-32H">
-                                                <rect key="frame" x="8" y="416" width="123" height="21"/>
+                                                <rect key="frame" x="8" y="416" width="141" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="kNU-md-Zvd"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -117,12 +108,21 @@
                                                         <color key="backgroundColor" red="0.4039215686" green="0.31372549020000001" blue="0.64313725489999995" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="strokeColor" red="0.4039215686" green="0.31372549020000001" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="2vj-Z3-FGe" kind="show" id="djH-I9-TPG"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time Smoke Free" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNo-TF-tDV">
+                                                <rect key="frame" x="222" y="140" width="146" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="3hX-Te-OiU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -178,13 +178,14 @@
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="nnL-PI-ehH"/>
                     <connections>
                         <outlet property="smokeCounterLabel" destination="TLK-5b-Hny" id="EkM-yE-mFR"/>
+                        <outlet property="smokeFreeTimerLabel" destination="PVG-eB-lJr" id="nHK-85-3t3"/>
                         <outlet property="smokingCounter" destination="K34-Kr-Bo8" id="AZi-z0-cnB"/>
                         <outlet property="warningText" destination="Dgs-9w-ja1" id="baG-rL-TpC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1156.4885496183206" y="434.50704225352115"/>
+            <point key="canvasLocation" x="-1156.7441860465117" y="433.90557939914169"/>
         </scene>
         <!--Articles-->
         <scene sceneID="gbZ-FK-gS9">
@@ -467,7 +468,7 @@
         <!--Info-->
         <scene sceneID="bU9-ak-gky">
             <objects>
-                <viewController id="XTJ-3g-SYj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" id="XTJ-3g-SYj" customClass="ProfileViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rQd-IQ-5Sc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -505,12 +506,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxZ-pI-aM3">
-                                <rect key="frame" x="163" y="216" width="48" height="30"/>
+                                <rect key="frame" x="154" y="216" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Edit">
+                                <buttonConfiguration key="configuration" style="filled" title="Logout">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="logout:" destination="XTJ-3g-SYj" eventType="touchUpInside" id="wff-oS-p2N"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9I-r0-ANh">
                                 <rect key="frame" x="16" y="311" width="361" height="34"/>

@@ -29,7 +29,7 @@ class RegisterViewController: UIViewController {
             "password": password,
         ]
 
-        let url = URL(string: "https://kickash-api-76oq.onrender.com/auth/register")!
+        let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/auth/register")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

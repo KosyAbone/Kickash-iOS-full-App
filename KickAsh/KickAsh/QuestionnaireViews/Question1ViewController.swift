@@ -148,6 +148,7 @@ struct QuestionnaireDataKey{
     static let question6 = "What prompted your decision to quit smoking? - "
     static let question7 = "What are your hobbies? - "
     static let question8 = "By when do you see yourself free from smoking? - "
+    static let questionnaireCompleted = false
 }
 
 // Extension to convert hex color string to UIColor
