@@ -620,9 +620,13 @@
                     <tabBarItem key="tabBarItem" title="Info" image="Vector" id="Qhy-nQ-Hzk"/>
                     <connections>
                         <outlet property="dateJoinedLabel" destination="e3I-Yf-FvP" id="P69-58-x3P"/>
+                        <outlet property="dateOfBirthTextField" destination="Chw-Hd-wFC" id="cQS-pr-4AT"/>
                         <outlet property="displayNameTextField" destination="wKF-xk-u7n" id="hAd-Fl-A6R"/>
                         <outlet property="emailTextField" destination="J9I-r0-ANh" id="yQm-S1-6VZ"/>
+                        <outlet property="genderTextField" destination="fFj-IT-o1F" id="76K-Rl-Ndr"/>
+                        <outlet property="noOfCigarPerDayTextField" destination="Pox-jX-syA" id="b7J-fc-fdl"/>
                         <outlet property="profileImageView" destination="isN-NC-F7r" id="Xn9-Na-VLS"/>
+                        <outlet property="smokingAgeTextField" destination="igj-cb-Ihv" id="DEu-eP-hi2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AvW-FK-nGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

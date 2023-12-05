@@ -12,8 +12,12 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         @IBOutlet weak var profileImageView: UIImageView!
         @IBOutlet weak var displayNameTextField: UITextField!
         @IBOutlet weak var emailTextField: UITextField!
+        @IBOutlet weak var genderTextField: UITextField!
+        @IBOutlet weak var dateOfBirthTextField: UITextField!
+        @IBOutlet weak var smokingAgeTextField: UITextField!
+        @IBOutlet weak var noOfCigarPerDayTextField: UITextField!
         @IBOutlet weak var dateJoinedLabel: UILabel!
-        
+    
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -80,6 +84,9 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             // Update display name
             displayNameTextField.text = "\(profile.firstName) \(profile.lastName)"
             emailTextField.text = profile.email
+            genderTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question3 + profile.username)
+            smokingAgeTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question1 + profile.username)
+            noOfCigarPerDayTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question2 + profile.username)
             
             // Update date joined
             let formatter = DateFormatter()
@@ -87,6 +94,13 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             if let date = formatter.date(from: profile.dateJoined) {
                 formatter.dateFormat = "MMM d, yyyy"
                 dateJoinedLabel.text = formatter.string(from: date)
+            }
+            // Update date of birth
+            let dobFormatter = DateFormatter()
+            dobFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // Format from the API response
+            if let dobDate = dobFormatter.date(from: profile.dateOfBirth) {
+                dobFormatter.dateFormat = "MMM d, yyyy" // Desired display format
+                dateOfBirthTextField.text = dobFormatter.string(from: dobDate)
             }
         }
     
@@ -106,6 +120,8 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         let lastName: String
         let dateJoined: String
         let email: String
+        let username: String
+        let dateOfBirth: String
     }
 
     struct ProfilePicture: Codable {
