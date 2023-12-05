@@ -602,7 +602,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="image1" id="isN-NC-F7r">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="default-photo" id="isN-NC-F7r">
                                 <rect key="frame" x="155" y="110" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -817,10 +817,10 @@
         <image name="Vector" width="23" height="23"/>
         <image name="article2" width="1920" height="1276"/>
         <image name="article_1" width="1300" height="861"/>
+        <image name="default-photo" width="150" height="150"/>
         <image name="doc" catalog="system" width="115" height="128"/>
         <image name="goal" width="889" height="814"/>
         <image name="home_main" width="1172" height="659"/>
-        <image name="image1" width="6016" height="4016"/>
         <image name="image2" width="1528" height="1412"/>
         <image name="splash" width="1182.6666259765625" height="1600"/>
         <systemColor name="labelColor">
