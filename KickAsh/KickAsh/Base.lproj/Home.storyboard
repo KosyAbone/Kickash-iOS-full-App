@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6KW-wC-Zgd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6KW-wC-Zgd">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -644,90 +644,94 @@
             </objects>
             <point key="canvasLocation" x="308" y="-415"/>
         </scene>
-        <!--History Tab-->
+        <!--HistoryViewController-->
         <scene sceneID="Pok-tC-tfo">
             <objects>
-                <viewController id="2vj-Z3-FGe" userLabel="History Tab" customClass="HistoryViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" id="2vj-Z3-FGe" userLabel="HistoryViewController" customClass="HistoryViewController" customModule="KickAsh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x6U-VB-pi6">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XNx-MF-eTX">
-                                <rect key="frame" x="0.0" y="52" width="393" height="672"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cro-Bm-lgL" userLabel="HistoryLabel">
+                                <rect key="frame" x="0.0" y="41" width="430" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.74117647060000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Smoke Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BQ-vc-38e" userLabel="SmokeCountLabel">
+                                <rect key="frame" x="268" y="141" width="142" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kDm-l2-P9K">
+                                <rect key="frame" x="20" y="170" width="390" height="659"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Historycell" rowHeight="75" id="fHM-Hq-qzM">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="75" id="rlg-iX-zC3" userLabel="HistoryCell" customClass="HistoryTableViewCell" customModule="KickAsh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fHM-Hq-qzM" id="PsR-vv-HIx">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rlg-iX-zC3" id="6lw-Us-5Ye">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1/1/1999" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NHM-hL-rUg" userLabel="DateSmokedtextField">
-                                                    <rect key="frame" x="20" y="11" width="253" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vpk-XW-5b3" userLabel="SmokeCountTextField">
+                                                    <rect key="frame" x="273" y="11" width="97" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ah5-ZF-Ymx" userLabel="CountTextView">
-                                                    <rect key="frame" x="321" y="11" width="60" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1/9/1991" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="avn-7m-aHX" userLabel="DateSmokedTextField">
+                                                    <rect key="frame" x="0.0" y="11" width="153" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-H1-Alp" userLabel="CountLabel">
-                                                    <rect key="frame" x="321" y="53" width="60" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="OEb-H1-Alp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ah5-ZF-Ymx" secondAttribute="leading" id="2Ql-FC-gYT"/>
-                                                <constraint firstAttribute="trailing" secondItem="OEb-H1-Alp" secondAttribute="trailing" constant="12" id="2kg-Af-BpT"/>
-                                                <constraint firstItem="NHM-hL-rUg" firstAttribute="baseline" secondItem="ah5-ZF-Ymx" secondAttribute="baseline" id="6to-rO-7nh"/>
-                                                <constraint firstItem="ah5-ZF-Ymx" firstAttribute="leading" secondItem="NHM-hL-rUg" secondAttribute="trailing" constant="48" id="N1m-TJ-FJk"/>
-                                                <constraint firstItem="NHM-hL-rUg" firstAttribute="top" secondItem="PsR-vv-HIx" secondAttribute="topMargin" id="W4e-T9-GYq"/>
-                                                <constraint firstItem="NHM-hL-rUg" firstAttribute="leading" secondItem="PsR-vv-HIx" secondAttribute="leadingMargin" id="YWs-A8-G4z"/>
-                                                <constraint firstItem="OEb-H1-Alp" firstAttribute="top" secondItem="ah5-ZF-Ymx" secondAttribute="bottom" constant="8" symbolic="YES" id="qop-tF-Vwf"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="OEb-H1-Alp" firstAttribute="width" secondItem="fHM-Hq-qzM" secondAttribute="height" multiplier="4:5" id="HAl-YX-daa"/>
-                                            <constraint firstItem="NHM-hL-rUg" firstAttribute="width" secondItem="fHM-Hq-qzM" secondAttribute="height" multiplier="253:75" id="MHJ-I3-edz"/>
-                                            <constraint firstItem="ah5-ZF-Ymx" firstAttribute="width" secondItem="fHM-Hq-qzM" secondAttribute="height" multiplier="4:5" id="Slg-ww-hyV"/>
-                                        </constraints>
+                                        <connections>
+                                            <outlet property="cigarCountLabel" destination="1BQ-vc-38e" id="8ys-WZ-o4A"/>
+                                            <outlet property="countTextField" destination="Vpk-XW-5b3" id="ZeI-Ae-BOc"/>
+                                            <outlet property="dateLabel" destination="YpT-TH-SCD" id="Xee-xh-Lmj"/>
+                                            <outlet property="dateSmokedTextField" destination="avn-7m-aHX" id="cXH-Ky-jun"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2vj-Z3-FGe" id="1gw-z8-rNe"/>
+                                    <outlet property="delegate" destination="2vj-Z3-FGe" id="uXw-Ii-sO2"/>
+                                </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bli-9O-HwW">
-                                <rect key="frame" x="0.0" y="71" width="393" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpT-TH-SCD" userLabel="DateLabel">
+                                <rect key="frame" x="57" y="141" width="63" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.5647059083" green="0.57647061349999995" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dg1-mJ-V22"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Bli-9O-HwW" firstAttribute="width" secondItem="XNx-MF-eTX" secondAttribute="height" multiplier="131:224" id="XA4-5E-c9t"/>
-                            <constraint firstItem="XNx-MF-eTX" firstAttribute="leading" secondItem="Bli-9O-HwW" secondAttribute="leading" id="cwc-oP-4Qz"/>
-                            <constraint firstItem="XNx-MF-eTX" firstAttribute="trailing" secondItem="Bli-9O-HwW" secondAttribute="trailing" id="r4c-xP-1Jg"/>
-                            <constraint firstItem="XNx-MF-eTX" firstAttribute="top" secondItem="Dg1-mJ-V22" secondAttribute="top" constant="52" id="wZ5-o6-tln"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wHa-hP-UeK"/>
+                    <connections>
+                        <outlet property="tableView" destination="kDm-l2-P9K" id="NhY-Xt-eKa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mm-CX-cLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1329" y="1239"/>
+            <point key="canvasLocation" x="-1329.7674418604652" y="1238.6266094420603"/>
         </scene>
         <!--ArticleDetails-->
         <scene sceneID="ftn-rA-vin">
             <objects>
                 <viewController id="Qqr-gH-C3S" userLabel="ArticleDetails" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iej-0f-qsv">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Article Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUK-Km-yD0">

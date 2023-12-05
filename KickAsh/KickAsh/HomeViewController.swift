@@ -84,7 +84,7 @@ class HomeViewController: UIViewController {
             var request = URLRequest(url: url)
             request.httpMethod = "PUT"
             
-            // Get the JWT token from UserDefaults (you may have stored it after login/authentication)
+            // Get the JWT token from UserDefaults (stored it after login/authentication)
             let token = UserDefaults.standard.string(forKey: "AuthToken")
             
             // Set the JWT token in the Authorization header
