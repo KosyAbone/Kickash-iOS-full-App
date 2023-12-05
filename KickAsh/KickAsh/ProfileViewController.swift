@@ -2,7 +2,7 @@
 //  ProfileViewController.swift
 //  KickAsh
 //
-//  Created by Ilham Sheikh on 2023-08-11.
+//  Created by Kossy on 2023-12-05.
 //
 
 import UIKit
@@ -19,10 +19,50 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         @IBOutlet weak var dateJoinedLabel: UILabel!
     
         
+        var userId: String? // This will store the user's ID fetched from the profile
+        
         override func viewDidLoad() {
             super.viewDidLoad()
+            retrieveProfileImageFromLocal()
             fetchUserProfile()
         }
+    
+        @IBAction func changeProfilePictureButtonTapped(_ sender: UIButton) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = true
+                present(imagePicker, animated: true, completion: nil)
+        }
+    
+        //To retrieve available picture from local data
+        func retrieveProfileImageFromLocal() {
+            if let profilePicURLString = UserDefaults.standard.string(forKey: "profilePicURL"),
+               let profilePicURL = URL(string: profilePicURLString) {
+                
+                let task = URLSession.shared.dataTask(with: profilePicURL) { [weak self] data, response, error in
+                    guard let data = data, error == nil else {
+                        print("Error loading image data: \(error?.localizedDescription ?? "Unknown error")")
+                        // If there's an error loading the local image, fetch from server
+                        self?.fetchUserProfile()
+                        return
+                    }
+                    
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.profileImageView.image = image
+                        }
+                    }
+                }
+                task.resume()
+            } else {
+                // If no local image found, fetch from server
+                fetchUserProfile()
+            }
+        }
+
+
+
     
         //To Get the User Profile details and Update the UI
         func fetchUserProfile() {
@@ -54,6 +94,8 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                     DispatchQueue.main.async {
                         self?.updateUI(with: result)
                     }
+                    // Store the user's ID for later use
+                    self?.userId = result._id
                 } catch {
                     print("Error decoding JSON: \(error)")
                 }
@@ -81,7 +123,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                 }.resume()
             }
             
-            // Update display name
+            // Update the different profile information fields
             displayNameTextField.text = "\(profile.firstName) \(profile.lastName)"
             emailTextField.text = profile.email
             genderTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question3 + profile.username)
@@ -103,6 +145,82 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                 dateOfBirthTextField.text = dobFormatter.string(from: dobDate)
             }
         }
+
+    
+    func uploadProfilePicture(image: UIImage) {
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+            print("Error converting image to data")
+            return
+        }
+        
+        // Construct URL with userId retrieved after getting user profile
+        let id = userId!
+        let uploadURLString = "https://api-kickash-8fefbb641f24.herokuapp.com/profile/\(id)/upload"
+
+        guard let url = URL(string: uploadURLString) else {
+            print("Invalid API endpoint")
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        let token = UserDefaults.standard.string(forKey: "AuthToken")
+        request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let boundary = "Boundary-\(UUID().uuidString)"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        let body = NSMutableData()
+        let boundaryPrefix = "--\(boundary)\r\n"
+
+        body.appendString(boundaryPrefix)
+        body.appendString("Content-Disposition: form-data; name=\"profilePicture\"; filename=\"profile.jpg\"\r\n")
+        body.appendString("Content-Type: image/jpeg\r\n\r\n")
+        body.append(imageData)
+        body.appendString("\r\n")
+
+        body.appendString("--\(boundary)--\r\n")
+        request.httpBody = body as Data
+
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let data = data, error == nil else {
+                print("Error uploading profile picture: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+
+            do {
+                let decoder = JSONDecoder()
+                let uploadResult = try decoder.decode(UploadResponse.self, from: data)
+
+                // Save profile image data to disk
+                if let imageUrl = URL(string: uploadResult.profileImageUrl) {
+                    // Save image URL to UserDefaults
+                    UserDefaults.standard.set(imageUrl.absoluteString, forKey: "profilePicURL")
+                    UserDefaults.standard.synchronize() // Ensure UserDefaults is immediately updated
+
+                    // Update UI on the main queue
+                    DispatchQueue.main.async {
+                        self?.profileImageView.image = image
+                    }
+                }
+            } catch {
+                print("Error decoding upload response: \(error)")
+            }
+        }
+
+        task.resume()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[.editedImage] as? UIImage {
+            profileImageView.image = pickedImage
+            uploadProfilePicture(image: pickedImage)
+        }
+
+        picker.dismiss(animated: true, completion: nil)
+    }
+
     
     @IBAction func logout(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
@@ -110,6 +228,22 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         newViewController.modalPresentationStyle = .fullScreen
         newViewController.isModalInPresentation = true
         self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    func saveImageToDisk(imageData: Data) -> URL? {
+        // Create a unique file URL in the Documents directory
+        let fileManager = FileManager.default
+        do {
+            let documentsDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileURL = documentsDirectory.appendingPathComponent("profileImage.jpg")
+
+            // Write image data to the file
+            try imageData.write(to: fileURL)
+            return fileURL
+        } catch {
+            print("Error saving image: \(error)")
+            return nil
+        }
     }
 
 }
@@ -122,6 +256,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         let email: String
         let username: String
         let dateOfBirth: String
+        let _id: String
     }
 
     struct ProfilePicture: Codable {

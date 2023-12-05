@@ -10,7 +10,6 @@
 		0B55C08F2B1EC98D0030A825 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B55C08E2B1EC9560030A825 /* Home.storyboard */; };
 		0B55C0912B1ECBE80030A825 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B55C08A2B1EB80D0030A825 /* HistoryTableViewCell.swift */; };
 		0B55C0932B1ECC2D0030A825 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B55C0922B1ECC2D0030A825 /* HistoryViewController.swift */; };
-		0B55C0952B1F04810030A825 /* uploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B55C0942B1F04810030A825 /* uploadImage.swift */; };
 		252116EA2A720E770092E6B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252116E92A720E770092E6B6 /* AppDelegate.swift */; };
 		252116EC2A720E770092E6B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252116EB2A720E770092E6B6 /* SceneDelegate.swift */; };
 		252116EE2A720E770092E6B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252116ED2A720E770092E6B6 /* ViewController.swift */; };
@@ -45,7 +44,6 @@
 		0B55C08A2B1EB80D0030A825 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		0B55C08D2B1EC9560030A825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		0B55C0922B1ECC2D0030A825 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		0B55C0942B1F04810030A825 /* uploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadImage.swift; sourceTree = "<group>"; };
 		252116E62A720E770092E6B6 /* KickAsh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickAsh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		252116E92A720E770092E6B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		252116EB2A720E770092E6B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		252116DD2A720E770092E6B6 = {
 			isa = PBXGroup;
 			children = (
-				0B55C0942B1F04810030A825 /* uploadImage.swift */,
 				252116E82A720E770092E6B6 /* KickAsh */,
 				252116E72A720E770092E6B6 /* Products */,
 			);
@@ -255,7 +252,6 @@
 				0B55C0912B1ECBE80030A825 /* HistoryTableViewCell.swift in Sources */,
 				259BB4632A859A2200A67D99 /* QuestionnaireEndViewController.swift in Sources */,
 				252116F42A720E770092E6B6 /* KickAsh.xcdatamodeld in Sources */,
-				0B55C0952B1F04810030A825 /* uploadImage.swift in Sources */,
 				252116EC2A720E770092E6B6 /* SceneDelegate.swift in Sources */,
 				5A6B47212A858A2D003ED235 /* SocialTableViewCell.swift in Sources */,
 				2581C7D02A8492E300C1B209 /* Question4ViewController.swift in Sources */,
