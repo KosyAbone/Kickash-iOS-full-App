@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
         getCustomisation()
 
         let cigNumber = String(cigarettesAllowed)
-        let displayText = "Only smoke " + cigNumber + " cigarettes today"
+        let displayText = "Please smoke only " + cigNumber + " cigarettes today"
         warningText.text = displayText
 
         if(username != nil){
@@ -74,12 +74,52 @@ class HomeViewController: UIViewController {
         cigarettesSmoked += 1
         smokeCounterLabel.text = String(cigarettesSmoked)
         
-        if(cigarettesSmoked >= cigarettesAllowed){
-            warningText.textColor = UIColor.red
-        }
-        
-        UserDefaults.standard.set(cigarettesSmoked, forKey: "Cigarettes Smoked" + username!)
-        
+        // Check if the API endpoint exists
+            guard let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/smoke/increment") else {
+                print("Invalid API endpoint")
+                return
+            }
+            
+            // Create a URLRequest
+            var request = URLRequest(url: url)
+            request.httpMethod = "PUT"
+            
+            // Get the JWT token from UserDefaults (you may have stored it after login/authentication)
+            let token = UserDefaults.standard.string(forKey: "AuthToken")
+            
+            // Set the JWT token in the Authorization header
+            request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+            
+            // Create a URLSession task for the API request
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                // Handle the API response here
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+                
+                // Parse the response data if needed
+                if let data = data {
+                    do {
+                        let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
+                        if let responseDict = responseJSON as? [String: Any],
+                           let currentCigarCount = responseDict["currentCigarCount"] as? Int {
+                            DispatchQueue.main.async { [self] in
+                                // Update UI & UserDefaults with the received currentCigarCount value
+                                UserDefaults.standard.set(currentCigarCount, forKey: "Cigarettes Smoked" + username!)
+                                self.smokeCounterLabel.text = "\(currentCigarCount)"
+                            }
+                        }
+                    } catch {
+                        print("Error parsing JSON: \(error)")
+                    }
+                }
+            }
+            
+            // Perform the API request
+            task.resume()
+            
+        // Reset timer
         resetTimer()
     }
     
