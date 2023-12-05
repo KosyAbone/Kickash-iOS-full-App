@@ -35,6 +35,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
     var notificationsAllowed : Bool = false
     
+    static var lastUpdateDate: Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,6 +76,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         UNUserNotificationCenter.current().delegate = self
                 
         checkForPermission()
+        
+        // Check and reset cigarettesSmoked at midnight
+        resetCigarettesSmokedAtMidnight()
+
 
         print("View Loaded")
     }
@@ -135,6 +141,23 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             dispatchSmokeFreeTimeNotification()
         }
     }
+    
+    func resetCigarettesSmokedAtMidnight() {
+            // Get the current date
+            let currentDate = Date()
+
+            // Compare the current date with the last update date
+            if let lastUpdateDate = HomeViewController.lastUpdateDate,
+               !Calendar.current.isDate(currentDate, inSameDayAs: lastUpdateDate) {
+                // If it's a new day, reset cigarettesSmoked and update the last update date
+                cigarettesSmoked = 0
+                HomeViewController.lastUpdateDate = currentDate
+
+                // Updating UI
+                smokeCounterLabel.text = String(cigarettesSmoked)
+            }
+        }
+
     
     func getGoalDays(_ userGoal : Date){
         let todayDate = Date()
@@ -261,9 +284,9 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     func dispatchNotification(){
         let identifier = "daily-update"
         let title = "Daily Update"
-        let body = "You have smoked 5 cigarettes today"
-        let hour = 00
-        let minute = 06
+        let body = "You have smoked " + String(describing: cigarettesSmoked) + "cigarettes today"
+        let hour = 15
+        let minute = 09
         let isDaily = true
                 
         let notificationCenter = UNUserNotificationCenter.current()
