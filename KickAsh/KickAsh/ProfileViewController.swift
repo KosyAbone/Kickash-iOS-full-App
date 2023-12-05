@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
         @IBOutlet weak var profileImageView: UIImageView!
         @IBOutlet weak var displayNameTextField: UITextField!
@@ -19,7 +19,8 @@ class ProfileViewController: UIViewController {
             super.viewDidLoad()
             fetchUserProfile()
         }
-        
+    
+        //To Get the User Profile details and Update the UI
         func fetchUserProfile() {
             // Perform API call to fetch user profile data
             guard let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/profile") else {
@@ -96,6 +97,7 @@ class ProfileViewController: UIViewController {
         newViewController.isModalInPresentation = true
         self.present(newViewController, animated: true, completion: nil)
     }
+
 }
 
     struct UserProfile: Codable {
@@ -111,4 +113,18 @@ class ProfileViewController: UIViewController {
         let publicId: String
     }
     
+    // Model for upload response
+    struct UploadResponse: Codable {
+        let message: String
+        let profileImageUrl: String
+        let success: Bool
+    }
 
+    // Extension to append string to NSMutableData
+    extension NSMutableData {
+        func appendString(_ string: String) {
+            if let data = string.data(using: .utf8) {
+                append(data)
+            }
+        }
+    }
