@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import UserNotifications
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
 
     @IBOutlet weak var smokingCounter: UIButton!
     
@@ -29,7 +30,10 @@ class HomeViewController: UIViewController {
     
     var timer: Timer?
     var smokeFreeCounter: Int = 0
+    var lastSmokeFreeTime: Int = 0
     var username : String!
+        
+    var notificationsAllowed : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +69,11 @@ class HomeViewController: UIViewController {
                 UserDefaults.standard.set(counter, forKey: "Cigarettes Smoked" + username!)
             }
         }
+        
+        //to display the notification when the app is in foreground
+        UNUserNotificationCenter.current().delegate = self
+                
+        checkForPermission()
 
         print("View Loaded")
     }
@@ -121,6 +130,10 @@ class HomeViewController: UIViewController {
             
         // Reset timer
         resetTimer()
+        
+        if(notificationsAllowed){
+            dispatchSmokeFreeTimeNotification()
+        }
     }
     
     func getGoalDays(_ userGoal : Date){
@@ -202,6 +215,7 @@ class HomeViewController: UIViewController {
     //reset timer to 0 on click
     func resetTimer() {
             timer?.invalidate()
+            lastSmokeFreeTime = smokeFreeCounter
             smokeFreeCounter = 0
             updateTimerLabel()
             startTimer()
@@ -214,5 +228,108 @@ class HomeViewController: UIViewController {
             
             smokeFreeTimerLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
         }
+    
+    func checkForPermission() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings{settings in
+            switch settings.authorizationStatus{
+            case .authorized:
+                self.dispatchNotification()
+                self.notificationsAllowed = true
+            case .denied:
+                self.notificationsAllowed = false
+                return
+            case .notDetermined:
+                notificationCenter.requestAuthorization(options: [.alert, .sound]){didAllow, error in
+                    if didAllow{
+                        self.dispatchNotification()
+                        self.notificationsAllowed = true
+                    }
+                }
+            default:
+                return
+            }
+                   
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // Show the notification even when the app is in the foreground
+        completionHandler([.alert, .sound])
+    }
+    
+    func dispatchNotification(){
+        let identifier = "daily-update"
+        let title = "Daily Update"
+        let body = "You have smoked 5 cigarettes today"
+        let hour = 00
+        let minute = 06
+        let isDaily = true
+                
+        let notificationCenter = UNUserNotificationCenter.current()
+                
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+                
+        let calendar = Calendar.current
+        var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+                
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+                
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+        notificationCenter.add(request)
+    }
+    
+    
+    //sends a notification showing the last smoke free time duration
+    func dispatchSmokeFreeTimeNotification(){
+        let hours = lastSmokeFreeTime / 3600
+        let minutes = (lastSmokeFreeTime % 3600) / 60
+        let seconds = lastSmokeFreeTime % 60
+            
+        let identifier = "smoke-free-time"
+        var title = "Good Going!"
+        var body = ""
+            
+            
+        if(hours == 0 && minutes == 0){
+            title = "You can do better"
+            body = "You were " + "\(seconds)" + " seconds smoke free"
+        }
+        else if(hours == 0){
+            body = "You were " + "\(minutes)" + " minutes and " + "\(seconds)" + " seconds smoke free"
+        }
+        else if(minutes == 0 && seconds == 0){
+            body = "You were " + "\(hours)" + " hours smoke free"
+        }
+        else if(minutes == 0){
+            body = "You were " + "\(hours)" + " hours and " + "\(seconds)" + " seconds smoke free"
+        }
+        else if(seconds == 0){
+            body = "You were " + "\(hours)" + " hours and " + "\(minutes)" + " minutes smoke free"
+        }
+        else {
+            body = "You were " + "\(hours)" + " hours, " + "\(minutes)" + " minutes and " + "\(seconds)" + " seconds smoke free"
+        }
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+        notificationCenter.add(request)
+        
+    }
 
 }
