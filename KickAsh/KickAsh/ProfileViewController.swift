@@ -35,9 +35,12 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                 present(imagePicker, animated: true, completion: nil)
         }
     
+        
+        
+    
         //To retrieve available picture from local data
         func retrieveProfileImageFromLocal() {
-            if let profilePicURLString = UserDefaults.standard.string(forKey: "profilePicURL"),
+            if let profilePicURLString = UserDefaults.standard.string(forKey: "profilePicURL" ),
                let profilePicURL = URL(string: profilePicURLString) {
                 
                 let task = URLSession.shared.dataTask(with: profilePicURL) { [weak self] data, response, error in

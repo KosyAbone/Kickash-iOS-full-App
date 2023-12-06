@@ -45,6 +45,8 @@ class LoginViewController: UIViewController {
             }
         }
         
+        
+        
                 let loginData: [String: Any] = [
                     "username": username,
                     "password": password
@@ -79,12 +81,13 @@ class LoginViewController: UIViewController {
 
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                           let token = json["token"] as? String {
+                           let token = json["token"] as? String,
+                                let userId = json["userId"] as? String {
                             // Save the token for future use
                             UserDefaults.standard.set(token, forKey: "AuthToken")
                             UserDefaults.standard.set(username, forKey: "Username")
-                            print("User logged in successfully.")
-
+                            UserDefaults.standard.set(userId, forKey: "UserId")
+                            
                             
                           //  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                            // let newViewController = storyBoard.instantiateViewController(withIdentifier:"questionair")
@@ -122,6 +125,7 @@ class LoginViewController: UIViewController {
                         }
                     }
                 }
+        
             task.resume()
         }
     
@@ -130,4 +134,8 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "RegisterSegue", sender: nil)
     }
     
+    
+    
 }
+
+
