@@ -120,12 +120,16 @@ class Question1ViewController: UIViewController {
     @IBAction func nextQuestion(_ sender: UIButton) {
         if(option1Text.backgroundColor == selectedButtonColor){
             UserDefaults.standard.set(option1Text.titleLabel?.text, forKey: QuestionnaireDataKey.question1 + username)
+            // Update user profile with the selected options
+            updateUserProfile(with: option1Text.titleLabel?.text ?? "")
         }
         else if (option2Text.backgroundColor == selectedButtonColor){
             UserDefaults.standard.set(option2Text.titleLabel?.text, forKey: QuestionnaireDataKey.question1 + username)
+            updateUserProfile(with: option2Text.titleLabel?.text ?? "")
         }
         else if (option3Text.backgroundColor == selectedButtonColor){
             UserDefaults.standard.set(option3Text.titleLabel?.text, forKey: QuestionnaireDataKey.question1 + username)
+            updateUserProfile(with: option3Text.titleLabel?.text ?? "")
         }
         else {
             sender.isEnabled = false
@@ -135,6 +139,64 @@ class Question1ViewController: UIViewController {
 //        let answer = UserDefaults.standard.string(forKey: Question1DataKey.question1 + username)
 //        print(answer)
     }
+    
+    func updateUserProfile(with options: String) {
+        // Fetch userId from UserDefaults
+        guard let userId = UserDefaults.standard.string(forKey: "UserId") else {
+            print("User ID not found")
+            return
+        }
+
+        // Construct API endpoint for updating the user profile
+        guard let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/profile/\(userId)/edit") else {
+            print("Invalid API endpoint")
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT" // Assuming your API uses POST to update user profiles
+        
+        // Prepare the body of the request with the questionnaire data
+        let requestBody = ["smokingAge": options]
+
+        do {
+            // Convert the data to JSON format
+            let jsonData = try JSONSerialization.data(withJSONObject: requestBody, options: [])
+            
+            // Attach the JSON data to the request
+            request.httpBody = jsonData
+
+            // Set headers and make the API call
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type") // Assuming JSON is expected
+            // Add authentication token if required
+            let authToken = UserDefaults.standard.string(forKey: "AuthToken")
+            request.setValue("Bearer \(authToken ?? "")", forHTTPHeaderField: "Authorization")
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                // Handle the response from the API call
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    print("Invalid response")
+                    return
+                }
+                
+                if (200...299).contains(httpResponse.statusCode) {
+                    // Successful update
+                    print("User profile updated successfully")
+                } else {
+                    // Handle other status codes
+                    print("Unexpected status code: \(httpResponse.statusCode)")
+                }
+            }.resume()
+        } catch {
+            print("Error preparing request: \(error)")
+        }
+    }
+
     
 }
 
