@@ -50,7 +50,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         cigarettesSmokedInPast = UserDefaults.standard.integer(forKey: QuestionnaireDataKey.question2 + username!)
 
-        var userGoal = UserDefaults.standard.object(forKey: QuestionnaireDataKey.question8 + username!) as! Date
+        let userGoal = UserDefaults.standard.object(forKey: QuestionnaireDataKey.question8 + username!) as! Date
         getGoalDays(userGoal)
 
         getCustomisation()

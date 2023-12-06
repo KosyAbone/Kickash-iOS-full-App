@@ -2,7 +2,7 @@
 //  ArticleDetailViewController.swift
 //  KickAsh
 //
-//  Created by Kossy on 2023-12-05.
+//  Created by Subash on 2023-12-05.
 //
 
 import UIKit

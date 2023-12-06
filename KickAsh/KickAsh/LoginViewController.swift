@@ -88,12 +88,6 @@ class LoginViewController: UIViewController {
                             UserDefaults.standard.set(username, forKey: "Username")
                             UserDefaults.standard.set(userId, forKey: "UserId")
                             
-                            
-                          //  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                           // let newViewController = storyBoard.instantiateViewController(withIdentifier:"questionair")
-                           // self.present(newViewController, animated: true, completion: nil)
-                            
-                            
                             DispatchQueue.main.async {
                                 let completed = UserDefaults.standard.bool(forKey: "QuestionnaireCompleted-" + username)
                                 //print("Goal Set!!!", completed)
@@ -133,9 +127,6 @@ class LoginViewController: UIViewController {
     {
         performSegue(withIdentifier: "RegisterSegue", sender: nil)
     }
-    
-    
-    
 }
 
 

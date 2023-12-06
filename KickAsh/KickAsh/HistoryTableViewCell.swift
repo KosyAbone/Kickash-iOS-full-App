@@ -12,5 +12,4 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var cigarCountLabel: UILabel!
     @IBOutlet weak var dateSmokedTextField: UITextField!
     @IBOutlet weak var countTextField: UITextField!
-
 }
