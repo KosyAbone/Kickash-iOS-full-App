@@ -18,11 +18,14 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         @IBOutlet weak var noOfCigarPerDayTextField: UITextField!
         @IBOutlet weak var dateJoinedLabel: UILabel!
     
-        
-        var userId: String? // This will store the user's ID fetched from the profile
+        var userId: String?
+        var username: String?
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            // Retrieve userId and username from UserDefaults
+            userId = UserDefaults.standard.string(forKey: "UserId")
+            username = UserDefaults.standard.string(forKey: "Username")
             retrieveProfileImageFromLocal()
             fetchUserProfile()
         }
@@ -36,8 +39,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         }
     
         
-        
-    
         //To retrieve available picture from local data
         func retrieveProfileImageFromLocal() {
             if let profilePicURLString = UserDefaults.standard.string(forKey: "profilePicURL" ),
@@ -64,15 +65,19 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             }
         }
 
-
-
     
         //To Get the User Profile details and Update the UI
         func fetchUserProfile() {
             // Perform API call to fetch user profile data
-            guard let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/profile") else {
-                print("Invalid API endpoint")
+            guard let userId = userId else {
+                print("User ID not found")
                 return
+            }
+                    
+            // Use userId in API endpoint
+            guard let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/profile/\(userId)") else {
+                    print("Invalid API endpoint")
+                    return
             }
             
             var request = URLRequest(url: url)
@@ -97,8 +102,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                     DispatchQueue.main.async {
                         self?.updateUI(with: result)
                     }
-                    // Store the user's ID for later use
-                    self?.userId = result._id
                 } catch {
                     print("Error decoding JSON: \(error)")
                 }
@@ -109,7 +112,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         
         func updateUI(with profile: UserProfile) {
             // Update profile picture
-            if let imageUrl = URL(string: profile.profilePicture.url) {
+            if let imageUrl = URL(string: profile.profilePicture.url ?? "") {
                 URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
                     if let error = error {
                         print("Error fetching image: \(error)")
@@ -126,12 +129,17 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                 }.resume()
             }
             
+            guard let username = username else {
+                print("User ID not found")
+                return
+            }
+            
             // Update the different profile information fields
             displayNameTextField.text = "\(profile.firstName) \(profile.lastName)"
             emailTextField.text = profile.email
-            genderTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question3 + profile.username)
-            smokingAgeTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question1 + profile.username)
-            noOfCigarPerDayTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question2 + profile.username)
+            genderTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question3 + username)
+            smokingAgeTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question1 + username)
+            noOfCigarPerDayTextField.text = UserDefaults.standard.string(forKey: QuestionnaireDataKey.question2 + username)
             
             // Update date joined
             let formatter = DateFormatter()
@@ -143,7 +151,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             // Update date of birth
             let dobFormatter = DateFormatter()
             dobFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // Format from the API response
-            if let dobDate = dobFormatter.date(from: profile.dateOfBirth) {
+            if let dobDate = dobFormatter.date(from: profile.dateOfBirth ?? "") {
                 dobFormatter.dateFormat = "MMM d, yyyy" // Desired display format
                 dateOfBirthTextField.text = dobFormatter.string(from: dobDate)
             }
@@ -156,9 +164,12 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             return
         }
         
-        // Construct URL with userId retrieved after getting user profile
-        let id = userId!
-        let uploadURLString = "https://api-kickash-8fefbb641f24.herokuapp.com/profile/\(id)/upload"
+        // Construct URL with userId retrieved from local
+        guard let userId = userId else {
+            print("User ID not found")
+                return
+        }
+        let uploadURLString = "https://api-kickash-8fefbb641f24.herokuapp.com/profile/\(userId)/upload"
 
         guard let url = URL(string: uploadURLString) else {
             print("Invalid API endpoint")
@@ -231,6 +242,13 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         newViewController.modalPresentationStyle = .fullScreen
         newViewController.isModalInPresentation = true
         self.present(newViewController, animated: true, completion: nil)
+        //clear userDefaults values
+        UserDefaults.standard.removeObject(forKey: "UserId")
+        UserDefaults.standard.removeObject(forKey: "AuthToken")
+        UserDefaults.standard.removeObject(forKey: "Username")
+        UserDefaults.standard.removeObject(forKey: "profilePicURL")
+        // Synchronize UserDefaults
+        UserDefaults.standard.synchronize()
     }
     
     func saveImageToDisk(imageData: Data) -> URL? {
@@ -258,13 +276,13 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         let dateJoined: String
         let email: String
         let username: String
-        let dateOfBirth: String
+        let dateOfBirth: String?
         let _id: String
     }
 
     struct ProfilePicture: Codable {
-        let url: String
-        let publicId: String
+        let url: String?
+        let publicId: String?
     }
     
     // Model for upload response
@@ -282,3 +300,4 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             }
         }
     }
+
