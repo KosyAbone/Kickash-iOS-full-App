@@ -2,47 +2,54 @@
 //  ArticleDetailViewController.swift
 //  KickAsh
 //
-//  Created by subash on 2023-12-05.
+//  Created by Kossy on 2023-12-05.
 //
 
 import UIKit
 import AVKit
 
 class ArticleDetailViewController: UIViewController {
-
-    // Replace "your_video_url" with your actual video URL
+    var player: AVPlayer?
+    
     @IBOutlet weak var videoView: UIView!
     let videoURL = URL(string: "http://blacpythoz.insomnia247.nl/files/byteforce/vids/nicotine.mp4")!
-    
-    var player: AVPlayer?
+    var playerController: AVPlayerViewController?
+    private var playerObserver: NSKeyValueObservation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set up the player
-        player = AVPlayer(url: videoURL)
-        
-        // Create AVPlayerLayer
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = videoView.bounds
-        
-        // Add AVPlayerLayer to videoView's layer
-        videoView.layer.addSublayer(playerLayer)
-        
-        // Start playing the video
+        setupVideoPlayer()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         player?.play()
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupVideoPlayer() {
+        player = AVPlayer(url: videoURL)
+        playerController = AVPlayerViewController()
+        
+        guard let player = player, let playerController = playerController else {
+            return
+        }
+        
+        playerController.player = player
+        playerController.view.frame = videoView.bounds
+        
+        addChild(playerController)
+        videoView.addSubview(playerController.view)
+        playerController.didMove(toParent: self)
+        
+        playerObserver = player.observe(\.status, options: [.new, .initial]) { [weak self] _, _ in
+            guard let self = self else { return }
+            if self.player?.status == .failed {
+                print("Video playback failed: \(String(describing: self.player?.error))")
+            }
+        }
     }
-    */
-
+    
+    deinit {
+        playerObserver?.invalidate()
+    }
 }
