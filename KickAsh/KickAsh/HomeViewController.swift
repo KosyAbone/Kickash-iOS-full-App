@@ -44,6 +44,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         username = UserDefaults.standard.string(forKey: "Username") ?? nil
         
+        cigarettesSmoked = UserDefaults.standard.integer(forKey: "Cigarettes Smoked" + username!)
+        
+        smokeCounterLabel.text = String(cigarettesSmoked)
+        
         cigarettesSmokedInPast = UserDefaults.standard.integer(forKey: QuestionnaireDataKey.question2 + username!)
 
         var userGoal = UserDefaults.standard.object(forKey: QuestionnaireDataKey.question8 + username!) as! Date
@@ -54,23 +58,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let cigNumber = String(cigarettesAllowed)
         let displayText = "Please smoke only " + cigNumber + " cigarettes today"
         warningText.text = displayText
-
-        if(username != nil){
-            var counter = UserDefaults.standard.integer(forKey: "Cigarettes Smoked" + username!)
-            print(counter)
-            if (counter != 0){
-                cigarettesSmoked = counter
-                if(cigarettesSmoked > cigarettesAllowed){
-                    warningText.textColor = UIColor.red
-                }
-                smokeCounterLabel.text = String(cigarettesSmoked)
-            }
-            else{
-                counter = counter + 1
-                cigarettesSmoked = counter
-                UserDefaults.standard.set(counter, forKey: "Cigarettes Smoked" + username!)
-            }
-        }
         
         //to display the notification when the app is in foreground
         UNUserNotificationCenter.current().delegate = self
@@ -86,8 +73,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     
     @IBAction func smokeCounter(_ sender: UIButton) {
-        cigarettesSmoked += 1
-        smokeCounterLabel.text = String(cigarettesSmoked)
         
         // Check if the API endpoint exists
             guard let url = URL(string: "https://api-kickash-8fefbb641f24.herokuapp.com/smoke/increment") else {
@@ -150,11 +135,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             if let lastUpdateDate = HomeViewController.lastUpdateDate,
                !Calendar.current.isDate(currentDate, inSameDayAs: lastUpdateDate) {
                 // If it's a new day, reset cigarettesSmoked and update the last update date
-                cigarettesSmoked = 0
+                UserDefaults.standard.set(0, forKey: "Cigarettes Smoked" + username!)
                 HomeViewController.lastUpdateDate = currentDate
 
                 // Updating UI
-                smokeCounterLabel.text = String(cigarettesSmoked)
+                smokeCounterLabel.text = String(0)
             }
         }
 
@@ -282,6 +267,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func dispatchNotification(){
+        guard let cigarettesSmoked = cigarettesSmoked else{
+            print("No CigarretesSmoked Data found in userDefaults")
+            return
+        }
+        
         let identifier = "daily-update"
         let title = "Daily Update"
         let body = "You have smoked " + String(describing: cigarettesSmoked) + "cigarettes today"
